@@ -1,8 +1,8 @@
 # 一.简易成绩管理系统
 ### 1.创建已知行数未知列数的二维数组
   > String score[][] = new String[classNum][];
-  > score[i] = new String[stuNum];
-  /n行数不可以未知
+  > score[i] = new String[stuNum];  
+  行数不可以未知
 ### 2.关于nextLine的使用
   > stuNum = input.nextInt();
   > scoreLine = input.nextLine();
