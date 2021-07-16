@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Exercise{
+	public static void main(String[] args){
+		
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("请输入班级数：");
+		int classNum = input.nextInt();
+		// 获取总班级数
+		
+		int stuNum = 0;
+		int addClass[] = new int[classNum];
+		int averageClass[] = new int[classNum];
+		int add = 0;
+		int addAverage = 0;
+		int average = 0;
+		String scoreLine;
+		String score[][] = new String[classNum][];
+		
+		for(int i = 0; i < classNum; i++){
+			System.out.print("\n请输入第" + (i + 1) + "个班级的人数：");
+			stuNum = input.nextInt();
+			//score[i] = new String[stuNum];
+			//可加可不加，后面另一串代码会自动开辟列数
+			
+			System.out.print("\n请输入每个学生的成绩（每项成绩用空格分隔）：");
+			scoreLine = input.nextLine();
+			scoreLine = input.nextLine();
+			//若nextLine前有其他input.
+			//此input.nextLine就会接收到""
+			
+			score[i] = scoreLine.split(" ");
+			//split对字符串以给定的字符进行分隔，得到字符串数组
+			addClass[i] = 0;
+			for(int a = 0; a < stuNum; a++){
+				addClass[i] += Integer.parseInt(score[i][a]);
+				//用input得到的是String，要转换成整数进行相加
+			}
+			averageClass[i] = addClass[i] / stuNum;
+			System.out.print("\n第" + (i + 1) + "个班的平均成绩是：" + averageClass[i] );
+		}
+		for(int x = 0; x < classNum; x++){
+			add += addClass[x];
+		}
+		for(int b = 0; b < classNum; b++){
+			addAverage += averageClass[b];
+		}
+		average = addAverage / classNum;
+		System.out.print("\n所有班级的总成绩是：" + add );
+		System.out.print("\n所有班级的平均成绩是：" + average);
+		
+	}
+	
+}
+	
